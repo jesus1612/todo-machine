@@ -1,25 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
 
+// Components
+import { TodoCounter } from './components/TodoCounter';
+import { TodoSearch } from './components/TodoSearch';
+import { TodoList } from './components/TodoList';
+import { TodoItem } from './components/TodoItem';
+import { CreateTodoButton } from './components/CreateTodoButton';
+
+const todos = [
+  { text: 'cortar cebolla', completed: false },
+  { text: 'Hacer tarea', completed: false },
+  { text: 'Comer', completed: false }
+]
 
 function App(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-        {props.saludo}
-
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-        </a>
-      </header>
-    </div>
+    <>
+      <TodoCounter />
+      <TodoSearch />
+      <TodoList>
+        {
+          todos.map( (todo, index) => (
+            <TodoItem key={index} text={todo.text}/>
+          ))}
+      </TodoList>
+      <CreateTodoButton />
+    </>
   );
 }
 
