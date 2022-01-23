@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
+//import './App.css';
 
 // Components
 import { TodoCounter } from './components/TodoCounter';
@@ -10,7 +9,7 @@ import { CreateTodoButton } from './components/CreateTodoButton';
 
 const todos = [
   { text: 'cortar cebolla', completed: false },
-  { text: 'Hacer tarea', completed: false },
+  { text: 'Hacer tarea', completed: true },
   { text: 'Comer', completed: false }
 ]
 
@@ -22,7 +21,7 @@ function App(props) {
       <TodoList>
         {
           todos.map( (todo, index) => (
-            <TodoItem key={index} text={todo.text}/>
+            <TodoItem key={index} text={todo.text} completed={todo.completed}/>
           ))}
       </TodoList>
       <CreateTodoButton />
