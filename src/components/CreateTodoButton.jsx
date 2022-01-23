@@ -1,8 +1,18 @@
 import React from "react";
 import '../styles/CreateTodoButton.css'
 
-const CreateTodoButton = () => (
-  <button className="CreateTodoButton">+</button>
-);
+const CreateTodoButton = () => {
+  
+  const onClickButton = () => {
+    alert("Cliqueado")
+  }
+  return (
+    <button
+    className="CreateTodoButton"
+    onClick={onClickButton}
+    >
+      +
+    </button>
+);}
 
 export {CreateTodoButton};
