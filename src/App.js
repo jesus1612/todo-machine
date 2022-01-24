@@ -21,6 +21,18 @@ function App(props) {
   const completedTodos = todos.filter(todo => !!todo.completed).length
   const totalTodos = todos.length
 
+  let searchedTodos = []
+
+  if(!searchedTodos >=1) {
+    searchedTodos = todos
+  } else {
+    searchedTodos = todos.filter(todo => {
+      const todoText = todo.text.toLowerCase()
+      const searchText = searchValue.toLowerCase()
+      return todoText.includes(searchText)
+
+    })
+  }
   return (
     <>
       <TodoCounter
@@ -33,7 +45,7 @@ function App(props) {
       />
       <TodoList>
         {
-          todos.map( (todo, index) => (
+          searchedTodos.map( (todo, index) => (
             <TodoItem key={index} text={todo.text} completed={todo.completed}/>
           ))}
       </TodoList>
