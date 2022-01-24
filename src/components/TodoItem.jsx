@@ -4,11 +4,11 @@ import '../styles/TodoItem.css';
 function TodoItem(props) {
 
   const onComplete = () => {
-    alert("Tarea terminada" + props.text)
+    props.onComplete()
   }
 
   const onDelete = () => {
-    alert("Borraste el todo " + props.text)
+    props.onDelete()
   }
 
   return (
