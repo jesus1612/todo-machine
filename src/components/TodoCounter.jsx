@@ -1,9 +1,9 @@
 import React from 'react';
 import '../styles/TodoCounter.css'
 
-const TodoCounter = () => (
+const TodoCounter = ({completedTodos, totalTodos}) => (
   <h2 className='TodoCounter'>
-  Has completado 2 de 3 todo
+  Has completado {completedTodos} de {totalTodos} {totalTodos > 1 ? "Todos" : "Todo"}
   </h2>
 );
 

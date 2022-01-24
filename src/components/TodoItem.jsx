@@ -23,10 +23,10 @@ function TodoItem(props) {
         {props.text}
       </p>
       <span
-      className={`Icon Icon-delete ${props.completed ? 'Icon-delete--active': ''}`}
+      className={`material-icons Icon Icon-delete ${props.completed ? 'Icon-delete--active': ''}`}
       onClick={onDelete}
       >
-        X
+        close
       </span>
     </li>
   );
