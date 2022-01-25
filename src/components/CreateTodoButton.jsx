@@ -1,10 +1,10 @@
 import React from "react";
 import '../styles/CreateTodoButton.css'
 
-const CreateTodoButton = () => {
+const CreateTodoButton = (props) => {
   
   const onClickButton = () => {
-    alert("Cliqueado")
+    props.setOpenModal(!props.openModal)
   }
   return (
     <button
